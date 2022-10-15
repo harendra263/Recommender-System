@@ -37,12 +37,10 @@ class RecSysModel(tez.Model):
         self.step_scheduler_after = 'epoch'
 
     def fetch_optimizer(self):
-        opt = torch.optim.Adam(self.parameters(),lr=1e-3)
-        return opt
+        return torch.optim.Adam(self.parameters(),lr=1e-3)
     
     def fetch_scheduler(self):
-        sch = torch.optim.lr_scheduler.StepLR(self.optimizer,step_size = 3, gamma=0.7)
-        return sch
+        return torch.optim.lr_scheduler.StepLR(self.optimizer,step_size = 3, gamma=0.7)
         
 
 
